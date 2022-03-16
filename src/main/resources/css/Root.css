@@ -1,0 +1,22 @@
+.root {
+    -fx-font-size: 20px;
+    -fx-font-family: Arial;
+}
+
+.toolbar {
+    -fx-background-color: grey;
+}
+
+.faketab {
+    -fx-tab-max-height: 0;
+}
+
+.faketab .tab-header-area {
+    visibility: hidden;
+}
+
+.bold {
+    -fx-font-weight: bold;
+}
+
+.list-view, .split-pane { -fx-background-insets: 0; -fx-padding: 0; }

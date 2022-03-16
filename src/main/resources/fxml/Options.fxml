@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import ch.awae.cncpp.logic.HomingMode?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ch.awae.cncpp.fx.OptionsController">
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"/>
+            </padding>
+            <VBox spacing="10">
+                <HBox spacing="10">
+                    <Label>Homing Mode (G28):</Label>
+                    <ComboBox fx:id="homingMode">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <HomingMode fx:constant="HOME_ALL"/>
+                                <HomingMode fx:constant="HOME_Z"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+                <HBox>
+                    <padding>
+                        <Insets left="20"/>
+                    </padding>
+                    <VBox spacing="10" fx:id="homingExtras">
+                        <CheckBox fx:id="updateBedMesh">
+                            Update Bed Mesh (G29)
+                        </CheckBox>
+                        <HBox spacing="10">
+                            <Label>Origin X:</Label>
+                            <TextField fx:id="zeroX" text="30"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label>Origin Y:</Label>
+                            <TextField fx:id="zeroY" text="55"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Label>Work Speed:</Label>
+                    <TextField fx:id="workSpeed" text="30"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label>Travel Speed:</Label>
+                    <TextField fx:id="travelSpeed" text="10000"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <BorderPane>
+            <padding>
+                <Insets top="20" right="20" left="20" bottom="20"/>
+            </padding>
+            <left>
+                <Button onAction="#onBack" text="Back"/>
+            </left>
+            <right>
+                <Button onAction="#onProcess" text="Process"/>
+            </right>
+        </BorderPane>
+    </bottom>
+
+</BorderPane>

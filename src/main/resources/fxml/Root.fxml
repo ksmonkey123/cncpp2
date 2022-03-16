@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ch.awae.cncpp.fx.RootController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <stylesheets>
+        <URL value="@../css/Root.css"/>
+    </stylesheets>
+
+    <center>
+        <TabPane fx:id="tabPane" styleClass="faketab">
+            <padding>
+                <Insets top="-10"/>
+            </padding>
+            <Tab closable="false" fx:id="fileListTab">
+                <fx:include source="FileList.fxml"/>
+            </Tab>
+            <Tab closable="false" fx:id="fileViewTab">
+                <fx:include source="FileView.fxml"/>
+            </Tab>
+            <Tab closable="false" fx:id="optionsTab">
+                <fx:include source="Options.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+
+</BorderPane>
