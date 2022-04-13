@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.4</version>
+        <version>2.6.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ch.awae</groupId>
@@ -16,7 +16,6 @@
     <description>cncpp2</description>
     <properties>
         <java.version>11</java.version>
-        <kotlin.version>1.5.10</kotlin.version>
         <openjfx.version>11.0.2</openjfx.version>
     </properties>
     <dependencies>
@@ -47,35 +46,10 @@
         </dependency>
 
         <!-- ==== JavaFX ==== -->
-        <!-- javafx-graphics has OS specific binaries. need to include all 3 OS versions -->
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${openjfx.version}</version>
-            <classifier>linux</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${openjfx.version}</version>
-            <classifier>mac</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${openjfx.version}</version>
-            <classifier>win</classifier>
-        </dependency>
-        <!-- javafx-controls and javafx-fxml have OS specific jars,
-        but they are identical. one version is enough -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>${openjfx.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
+            <groupId>ch.awae</groupId>
+            <artifactId>openjfx-fullstack</artifactId>
+            <type>pom</type>
             <version>${openjfx.version}</version>
         </dependency>
     </dependencies>
